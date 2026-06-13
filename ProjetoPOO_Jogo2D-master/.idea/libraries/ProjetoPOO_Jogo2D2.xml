@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ProjetoPOO_Jogo2D2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/release/ProjetoPOO_Jogo2D.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

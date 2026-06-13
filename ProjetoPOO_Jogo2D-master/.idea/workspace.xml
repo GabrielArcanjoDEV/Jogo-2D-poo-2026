@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ProjetoPOO_Jogo2D:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53c243d3-44b9-4ae3-8f2e-bd01d9490b08" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release/ProjetoPOO_Jogo2D.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ewertonrocha21&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ewertonrocha21/ProjetoPOO_Jogo2D.git&quot;,
+    &quot;accountId&quot;: &quot;1abb62cb-c5b8-4b23-a2f0-66a7c2f404e7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3F01ebt9Gws5pJ7YwiW9dy5AbGQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Tela.executor": "Run",
+    "JAR Application.ProjetoPOO_Jogo2D.jar (1).executor": "Run",
+    "JAR Application.ProjetoPOO_Jogo2D.jar.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Ewerton/IdeaProjects/ProjetoPOO_Jogo2D/src/sons",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D\src\sons" />
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D\screenshots" />
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D\screenshots" />
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D" />
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D\src\imagens" />
+      <recent name="C:\Users\Ewerton\IdeaProjects\ProjetoPOO_Jogo2D\release" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JAR Application.ProjetoPOO_Jogo2D.jar (1)">
+    <configuration name="Tela" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tela.Tela" />
+      <module name="ProjetoPOO_Jogo2D" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tela.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjetoPOO_Jogo2D.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/release/ProjetoPOO_Jogo2D.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProjetoPOO_Jogo2D.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/ProjetoPOO_Jogo2D_jar/ProjetoPOO_Jogo2D.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.ProjetoPOO_Jogo2D.jar (1)" />
+        <item itemvalue="Application.Tela" />
+        <item itemvalue="JAR Application.ProjetoPOO_Jogo2D.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53c243d3-44b9-4ae3-8f2e-bd01d9490b08" name="Changes" comment="" />
+      <created>1781197269216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781197269216</updated>
+      <workItem from="1781197270436" duration="4959000" />
+      <workItem from="1781204531982" duration="2029000" />
+      <workItem from="1781206619537" duration="803000" />
+      <workItem from="1781215769681" duration="5960000" />
+      <workItem from="1781224633909" duration="1046000" />
+      <workItem from="1781229233479" duration="497000" />
+      <workItem from="1781308109959" duration="3234000" />
+      <workItem from="1781311688125" duration="116000" />
+      <workItem from="1781312638408" duration="170000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
