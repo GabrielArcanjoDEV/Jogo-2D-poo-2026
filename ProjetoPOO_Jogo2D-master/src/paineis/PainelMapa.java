@@ -63,7 +63,25 @@ public class PainelMapa extends JPanel {
             verificarColetaChaves();
 
             for (Inimigo inimigo : inimigos) {
-                inimigo.atualizarComJogador(jogador.getX(), jogador.getY(), jogador);
+                inimigo.atualizarComJogador(
+                        jogador.getX(),
+                        jogador.getY(),
+                        jogador
+                );
+            }
+
+            // Sistema de ataque por distância adicionado logo após o loop dos inimigos
+            if (jogador.isAtacando() && jogador.podeAtacar()) {
+                for (Inimigo inimigo : inimigos) {
+                    double distancia = Math.hypot(
+                            jogador.getX() - inimigo.getX(),
+                            jogador.getY() - inimigo.getY()
+                    );
+
+                    if (distancia <= 100) {
+                        inimigo.levarDano(1);
+                    }
+                }
             }
 
             if (!jogador.isVivo() && !fimDeJogoMostrado) {

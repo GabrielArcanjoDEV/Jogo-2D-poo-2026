@@ -12,6 +12,12 @@ public class PainelJogo extends JPanel {
     public static Musica musica = new Musica();
 
     public PainelJogo() {
+        // CORREÇÃO: Garante que o estado interno da música seja ativado
+        // caso ela tenha sido desligada nas telas de vitória/derrota
+        if (!musica.isMusicaLigada()) {
+            musica.ligar();
+        }
+
         musica.tocar("/sons/musicaJogo.wav");
 
         addMouseListener(new MouseAdapter() {

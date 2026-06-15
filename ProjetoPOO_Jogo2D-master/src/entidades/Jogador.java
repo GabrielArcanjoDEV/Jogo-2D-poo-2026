@@ -40,6 +40,10 @@ public class Jogador extends Entidade implements KeyListener {
 
     private final BufferedImage[][] playerSprites = new BufferedImage[DIRECOES][FRAMES_POR_DIRECAO];
 
+    // Novas variáveis de ataque adicionadas
+    private boolean atacando = false;
+    private long ultimoAtaque = 0;
+
     public Jogador(int row, int col) {
         super(col * MapaMatriz.TILE_SIZE, row * MapaMatriz.TILE_SIZE,
                 MapaMatriz.TILE_SIZE - 16, MapaMatriz.TILE_SIZE - 16,
@@ -139,6 +143,7 @@ public class Jogador extends Entidade implements KeyListener {
             case KeyEvent.VK_S, KeyEvent.VK_DOWN  -> { dx = 0; dy =  VELOCIDADE_PPS; direcaoLinha = 0; }
             case KeyEvent.VK_A, KeyEvent.VK_LEFT  -> { dx = -VELOCIDADE_PPS; dy = 0; direcaoLinha = 1; }
             case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> { dx =  VELOCIDADE_PPS; dy = 0; direcaoLinha = 2; }
+            case KeyEvent.VK_SPACE                 -> atacando = true; // Modificação do espaço adicionada
         }
     }
 
@@ -149,6 +154,7 @@ public class Jogador extends Entidade implements KeyListener {
             case KeyEvent.VK_S, KeyEvent.VK_DOWN  -> { if (dy > 0) dy = 0; }
             case KeyEvent.VK_A, KeyEvent.VK_LEFT  -> { if (dx < 0) dx = 0; }
             case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> { if (dx > 0) dx = 0; }
+            case KeyEvent.VK_SPACE                 -> atacando = false; // Modificação do espaço adicionada
         }
     }
 
@@ -167,4 +173,20 @@ public class Jogador extends Entidade implements KeyListener {
 
     public void coletarChaves() { chavesColetadas++; }
     public void morrer() { vivo = false; }
+
+    // Novos métodos de ataque adicionados no final
+    public boolean isAtacando() {
+        return atacando;
+    }
+
+    public boolean podeAtacar() {
+        long agora = System.currentTimeMillis();
+
+        if (agora - ultimoAtaque >= 500) {
+            ultimoAtaque = agora;
+            return true;
+        }
+
+        return false;
+    }
 }

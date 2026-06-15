@@ -40,6 +40,9 @@ public class Inimigo extends Entidade {
 
     private boolean olhandoDireita = true;
 
+    // Nova variável de vida do inimigo adicionada
+    private int vida = 3;
+
     public Inimigo(int row, int col) {
         super(col * MapaMatriz.TILE_SIZE, row * MapaMatriz.TILE_SIZE,
                 MapaMatriz.TILE_SIZE - 32, MapaMatriz.TILE_SIZE - 32,
@@ -206,9 +209,38 @@ public class Inimigo extends Entidade {
         } else {
             g2.drawImage(frame, drawX, drawY, tamanho, tamanho, null);
         }
+
+        // Desenho da barra de vida adicionado aqui dentro do desenhar
+        g2.setColor(Color.RED);
+        g2.fillRect(drawX + 25, drawY - 10, vida * 20, 5);
+
+        g2.setColor(Color.WHITE);
+        g2.drawRect(drawX + 25, drawY - 10, 60, 5);
     }
 
     public Estado getEstado() { return estado;  }
     public int getOrigemX()   { return origemX; }
     public int getOrigemY()   { return origemY; }
+
+    // Novos métodos de vida e respawn adicionados no final
+    public void levarDano(int dano) {
+        vida -= dano;
+
+        if (vida <= 0) {
+            respawn();
+        }
+    }
+
+    private void respawn() {
+        vida = 3;
+
+        x = origemX;
+        y = origemY;
+
+        estado = Estado.PARADO;
+    }
+
+    public int getVida() {
+        return vida;
+    }
 }
