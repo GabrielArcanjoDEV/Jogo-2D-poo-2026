@@ -1,6 +1,7 @@
 package sons;
 
 import javax.sound.sampled.*;
+import javax.swing.*;
 import java.net.URL;
 
 public class Musica {
@@ -25,6 +26,9 @@ public class Musica {
             setVolume(volumeAtual);
             if (musicaLigada) {
                 clip.start();
+            } else {
+                // Se estiver desligada, NÃO inicia o clip
+                clip.stop();
             }
         } catch (Exception e) {
             throw new RuntimeException("Erro ao carregar o audio: " + e);
@@ -68,16 +72,39 @@ public class Musica {
         if (volumeControl == null) return;
         float volume;
         switch (nivel) {
-            case 0: volume = -80f; break;
-            case 1: volume = -30f; break;
-            case 2: volume = -20f; break;
-            case 3: volume = -12f; break;
-            case 4: volume = -5f; break;
-            default: volume = 0f; break;
+            case 0:
+                volume = -80f;
+                break;
+            case 1:
+                volume = -30f;
+                break;
+            case 2:
+                volume = -20f;
+                break;
+            case 3:
+                volume = -12f;
+                break;
+            case 4:
+                volume = -5f;
+                break;
+            default:
+                volume = 0f;
+                break;
         }
         volumeControl.setValue(volume);
     }
 
-    public boolean isMusicaLigada() { return musicaLigada; }
-    public int getVolumeAtual() { return volumeAtual; }
+    public boolean isMusicaLigada() {
+        return musicaLigada;
+    }
+
+    public int getVolumeAtual() {
+        return volumeAtual;
+    }
+
+    public void parar() {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+        }
+    }
 }

@@ -87,7 +87,7 @@ public class PainelMapa extends JPanel {
             if (!jogador.isVivo() && !fimDeJogoMostrado) {
                 fimDeJogoMostrado = true;
                 timer.stop();
-                PainelJogo.musica.desligar();
+                PainelJogo.musica.parar();
                 JFrame janela = (JFrame) SwingUtilities.getWindowAncestor(this);
                 SwingUtilities.invokeLater(() -> {
                     janela.setContentPane(new TelaDerrota(janela));
@@ -99,7 +99,7 @@ public class PainelMapa extends JPanel {
             if (jogador.getChavesColetadas() >= 7 && !fimDeJogoMostrado) {
                 fimDeJogoMostrado = true;
                 timer.stop();
-                PainelJogo.musica.desligar();
+                PainelJogo.musica.parar();
                 JFrame janela = (JFrame) SwingUtilities.getWindowAncestor(this);
                 SwingUtilities.invokeLater(() -> {
                     janela.setContentPane(new TelaVencedor(janela));

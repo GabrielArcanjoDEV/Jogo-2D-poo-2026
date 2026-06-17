@@ -72,7 +72,7 @@ public class TelaVencedor extends JPanel {
     }
 
     private void voltarInicio() {
-        PainelJogo.musica.desligar();
+        PainelJogo.musica.parar();
         raiz.setContentPane(new PainelJogo());
         raiz.revalidate();
         raiz.repaint();
