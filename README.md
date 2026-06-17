@@ -108,59 +108,67 @@ Colete as <strong>7 chaves</strong> espalhadas pelo mapa para vencer. Use a barr
 <hr>
 
 <h2>📐 Diagrama de Classes</h2>
-┌─────────────────────────────┐
-                │        <<abstract>>         │
-                │           Entidade          │
-                │─────────────────────────────│
-                │ # x, y : int                │
-                │ # largura, altura : int     │
-                │ # velocidade : int          │
-                │ # vida : int                │
-                │ # cor : Color               │
-                │─────────────────────────────│
-                │ + atualizar() : void        │
-                │ + desenhar(g2, camera) : void │
-                │ + getBounds() : Rectangle   │
-                │ + levarDano(int) : void     │
-                └──────────────┬──────────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-      ┌─────────┴─────────┐       ┌──────────┴──────────┐
-      │     Jogador       │       │       Inimigo       │
-      │───────────────────│       │──────────────────────│
-      │ - chavesColetadas │       │ - estado : Estado    │
-      │ - vivo : boolean  │       │   {PARADO,           │
-      │ - playerSprites   │       │    PERSEGUINDO,      │
-      │───────────────────│       │    ATACANDO}         │
-      │ + atualizar(dt)   │       │ - framesIdle (static)│
-      │ + desenhar(g2, c) │       │ - framesKicking(...) │
-      │ + atacar()        │       │──────────────────────│
-      │ + isVivo()        │       │ + atualizar()        │
-      │ implements        │       │ + desenhar(g2, c)    │
-      │   KeyListener     │       │ + atualizarCom       │
-      └───────────────────┘       │   Jogador(...)       │
-                                  └──────────────────────┘
+  ┌────────────────────────────────────────────────────────┐
+  │                      <<abstract>>                      │
+  │                        Entidade                        │
+  ├────────────────────────────────────────────────────────┤
+  │ # x, y : int                                           │
+  │ # largura, altura : int                                │
+  │ # velocidade : int                                     │
+  │ # vida : int                                           │
+  │ # cor : Color                                          │
+  ├────────────────────────────────────────────────────────┤
+  │ + atualizar() : void                                   │
+  │ + desenhar(g2, camera) : void                          │
+  │ + getBounds() : Rectangle                              │
+  │ + levarDano(int) : void                                │
+  └───────────────────────────┬────────────────────────────┘
+                              │
+            ┌─────────────────┴─────────────────┐
+            ▼                                   ▼
+  ┌───────────────────┐               ┌──────────────────────┐
+  │      Jogador      │               │       Inimigo        │
+  ├───────────────────┤               ├──────────────────────┤
+  │ - chavesColetadas │               │ - vida : int         │
+  │ - vivo : boolean  │               │ - estado : Estado    │
+  │ - playerSprites   │               │   {PARADO,           │
+  ├───────────────────┤               │    PERSEGUINDO,      │
+  │ + atualizar(dt)   │               │    ATACANDO}         │
+  │ + desenhar(g2, c) │               │ - framesIdle (static)│
+  │ + atacar()        │               │ - framesKicking(...) │
+  │ + isVivo()        │               ├──────────────────────┤
+  │                   │               │ + atualizar()        │
+  │ (implements       │               │ + desenhar(g2, c)    │
+  │  KeyListener)     │               │ + atualizarCom       │
+  └───────────────────┘               │   Jogador(...)       │
+                                      └──────────────────────┘
 
-┌──────────────┐     usa     ┌──────────────────┐
-│    Camera    │◄────────────│    PainelMapa    │
-│──────────────│             │──────────────────│
-│ - cameraX    │             │ - jogador        │
-│ - cameraY    │             │ - inimigos       │
-│──────────────│             │ - camera         │
-│ + atualizar  │             │ - mapa           │
-│   (Jogador)  │             │ - timer          │
-└──────────────┘             └──────────────────┘
+  ┌───────────────────┐               ┌──────────────────────┐
+  │      Camera       │               │      PainelMapa      │
+  ├───────────────────┤               ├──────────────────────┤
+  │ - cameraX : int   │               │ - jogador : Jogador  │
+  │ - cameraY : int   │   ◄────────── │ - inimigos : List    │
+  ├───────────────────┤      usa      │ - camera : Camera    │
+  │ + atualizar()     │               │ - mapa : MapaMatriz  │
+  └───────────────────┘               │ - timer : Timer      │
+                                      └──────────────────────┘
 
-┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│  MapaMatriz  │    │ GeradorMapa  │    │  Decoracao   │
-│──────────────│    │──────────────│    │──────────────│
-│ MAP[][]      │    │ - tiles[]    │    │ - id : int   │
-│ DECORATION   │    │ - imagensDec │    │ - nomeArquivo│
-│ keys[][]     │◄───│ + desenhar() │    │              │
-│ keysColetadas│    │              │    │ TIPOS[]      │
-│ + isSolid()  │    └──────────────┘    │  (static)    │
-└──────────────┘                        └──────────────┘
+  ┌───────────────────┐               ┌──────────────────────┐
+  │    MapaMatriz     │               │     GeradorMapa      │
+  ├───────────────────┤               ├──────────────────────┤
+  │ - MAP[][]         │               │ - tiles[]            │
+  │ - DECORATION[][]  │   ◄────────── │ - imagensDec         │
+  │ - keys[][]        │    consulta   ├──────────────────────┤
+  │ - keysColetadas   │               │ + desenhar()         │
+  ├───────────────────┤               └──────────────────────┘
+  │ + isSolid()       │
+  └───────────────────┘               ┌──────────────────────┐
+                                      │      Decoracao       │
+                                      ├──────────────────────┤
+                                      │ - id : int           │
+                                      │ - nomeArquivo        │
+                                      │ - TIPOS[] (static)   │
+                                      └──────────────────────┘
 
 <hr>
 
